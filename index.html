@@ -3,7 +3,7 @@
 	.formholder{
 		height: 60vh;
 		/*margin-left: 30vw;*/
-		margin-top: 20vh;
+		margin-top: 2vh;
 		border-radius: 9px;
 
 	}
@@ -26,11 +26,11 @@
 				<h1 align="center" style="color: whitesmoke;">Login</h1>
 				<label class="text text-white">Username</label><input type="text" class="form-control" required name="username" id="username" placeholder="Your Username">
 
-				<label class="text text-white">Password</label><input type="Password" required class="form-control" id="password" name="password" placeholder="Your Password"><label id="fill" class="text text-danger" style="color:red; font-weight: bolder;"></label><br>
+				<label class="text text-white">Password</label><input type="Password" required class="form-control" id="password" name="password" placeholder="Your Password"><label id="fill" class="text" style="color:palevioletred; font-weight: bolder;"></label><br>
 				<br>
 				
-				<button class="btn btn-outline-white bg-primary btn-primary" type="reset">Cuncel</button>
-				<button class="btn btn-outline-white bg-primary btn-primary" type="submit" onclick="logadmin();">Login</button><br><br>
+				<button class="btn btn-outline-primary bg-white btn-white" style="margin-left: 0vw" type="reset">Cuncel</button>
+				<button class="btn btn-outline-primary bg-white btn-white " style="margin-left: 12vw" type="submit" onclick="logadmin()">Login</button><br><br>
 				<a href="Create.html" class="link" style="color: whitesmoke;">Create New Acount</a>
 				<a href="Create.html" class="link" style="color: whitesmoke; margin-left: 2vw;"> Forgot Your Password</a>
 
@@ -43,14 +43,23 @@
 
 <script type="text/javascript">
 	function logadmin() {
+		const page='homeuser';
 		var username=document.getElementById('username').value;
 
 		var password=document.getElementById('password').value;
-		if (username==="jado" && password==="jado") {
-		window.location="homeuser.html"
+		
+		if(username!='' || password!=''){
+			if (username==="jado" && password==="jado") {
+		window.location.href='homeuser.html';
+			
+			page="history";
+		}
+		window.location = page+".html";
+		return false;
+			
 		}
 		else{
-			document.getElementById('fill').innerHTML="Type in username and password Please!!";
+			document.getElementById('fill').innerHTML="Invalid username Or password Please!!";
 			return false;
 		}
 	}
