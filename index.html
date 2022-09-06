@@ -1,10 +1,9 @@
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <style type="text/css">
 	.formholder{
-		height: 400px;
-		margin-left: 400px;
-		margin-top: 200px;
-		box-shadow: 0px 0px 50px 0px black;
+		height: 60vh;
+		/*margin-left: 30vw;*/
+		margin-top: 20vh;
 		border-radius: 9px;
 
 	}
@@ -13,14 +12,25 @@
 
 <div class="container-fluid">
 
-	<div class="row bg-primary" style="height: 700px;">
-		<div class="col-md-5 bg-secondary formholder">
-			<form class="form col-md-10" style="margin-left: 40px;">
+	<div class="row bg-primary" style="height: 100vh;">
+		<div class="col-md-8 bg-secondary" style="background-image: url(6.jpg); background-repeat: no-repeat; background-size:cover;">
+			
+			
+		</div>
+<div style="font-size:2em; height: 20vh; width: 66.6vw;  top:5vh; box-shadow: 2em; font-family: sans-serif; background-color: rgb(1, 1, 1,0.8); position: absolute;">
+	 <h1 class="text text-white" style="box-shadow: 2em; font-family: sans-serif;  position: relative;">WELCOME</h1>
+	 <p style="color:lightyellow; font-size:0.4em;">Hence, we have applied JavaScript validation on login form, you can also use database to verify user. Hope you like it, keep reading our other blogs in future.Hence, we have applied JavaScript validation on login form, you can also use database to verify user. Hope you like it, keep reading our other blogs in future.Hence, we have applied JavaScript validation on login form, you can also use database to verify user. Hope you like it, keep reading our other blogs in future. </p>
+	 </div>
+		<div class="col-md-4 bg-primary formholder">
+			<form class="form col-md-10" style="margin-left: 4vw;">
 				<h1 align="center" style="color: whitesmoke;">Login</h1>
-				<label>Username</label><input type="text" class="form-control" required name="" placeholder="Your Username">
-				<label>Password</label><input type="Password" class="form-control" name="" placeholder="Your Password"><br><br>
-				<button class="btn btn-outline-success btn-light" onclick="window.location.href='homeuser.html'">User Login</button>
-				<button class="btn btn-outline-success btn-light" type="submit" onclick="window.location.href='homeadmin.html'">Admin Login</button><br><br>
+				<label class="text text-white">Username</label><input type="text" class="form-control" required name="username" id="username" placeholder="Your Username">
+
+				<label class="text text-white">Password</label><input type="Password" required class="form-control" id="password" name="password" placeholder="Your Password"><label id="fill" class="text text-danger" style="color:red; font-weight: bolder;"></label><br>
+				<br>
+				
+				<button class="btn btn-outline-white bg-primary btn-primary" type="reset">Cuncel</button>
+				<button class="btn btn-outline-white bg-primary btn-primary" type="submit" onclick="logadmin();">Login</button><br><br>
 				<a href="Create.html" class="link" style="color: whitesmoke;">Create New Acount</a>
 				<a href="Create.html" class="link" style="color: whitesmoke; margin-left: 2vw;"> Forgot Your Password</a>
 
@@ -30,3 +40,18 @@
 </div>
 
 <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+	function logadmin() {
+		var username=document.getElementById('username').value;
+
+		var password=document.getElementById('password').value;
+		if (username==="jado" && password==="jado") {
+		window.location="homeuser.html"
+		}
+		else{
+			document.getElementById('fill').innerHTML="Type in username and password Please!!";
+			return false;
+		}
+	}
+</script>
